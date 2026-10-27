@@ -1,0 +1,2378 @@
+[
+ {
+  "id": "option",
+  "word": "Option",
+  "phonetic": "[Options / Basics]",
+  "translation": "期权：在约定日期前以约定价格买入或卖出标的的权利（而非义务）。EN: A contract giving the right, not the obligation, to buy or sell an underlying at a set price before a set date.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "期权",
+  "related": [
+   "call",
+   "put",
+   "underlying",
+   "strike",
+   "expiration"
+  ]
+ },
+ {
+  "id": "call",
+  "word": "Call option",
+  "phonetic": "[Options / Basics]",
+  "translation": "看涨期权：以行权价买入标的的权利；标的上涨时获利。EN: Right to BUY the underlying at the strike. Gains when price rises. 公式: Payoff = max(S − K, 0) − premium 例: Buy a $100 call for $3: profit above $103 at expiry.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics",
+   "bullish"
+  ],
+  "zh": "看涨期权",
+  "related": [
+   "put",
+   "strike",
+   "premium",
+   "long-call",
+   "delta"
+  ]
+ },
+ {
+  "id": "put",
+  "word": "Put option",
+  "phonetic": "[Options / Basics]",
+  "translation": "看跌期权：以行权价卖出标的的权利；标的下跌时获利。EN: Right to SELL the underlying at the strike. Gains when price falls. 公式: Payoff = max(K − S, 0) − premium 例: Buy a $100 put for $2: profit below $98 at expiry.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics",
+   "bearish"
+  ],
+  "zh": "看跌期权",
+  "related": [
+   "call",
+   "strike",
+   "premium",
+   "long-put",
+   "protective-put"
+  ]
+ },
+ {
+  "id": "underlying",
+  "word": "Underlying",
+  "phonetic": "[Options / Basics]",
+  "translation": "标的资产：期权所对应的股票、ETF 或指数。EN: The stock, ETF or index the option is written on.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "标的资产",
+  "related": [
+   "option",
+   "spot"
+  ]
+ },
+ {
+  "id": "spot",
+  "word": "Spot price",
+  "phonetic": "[Options / Basics]",
+  "translation": "现价：标的当前市场价格（S）。EN: Current market price of the underlying (S).",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "现价",
+  "related": [
+   "underlying",
+   "moneyness"
+  ]
+ },
+ {
+  "id": "strike",
+  "word": "Strike price",
+  "phonetic": "[Options / Basics]",
+  "translation": "行权价：期权可以被行权的固定价格（K）。EN: The fixed price (K) at which the option can be exercised.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "行权价",
+  "related": [
+   "moneyness",
+   "itm",
+   "otm",
+   "atm"
+  ]
+ },
+ {
+  "id": "premium",
+  "word": "Premium",
+  "phonetic": "[Options / Basics]",
+  "translation": "权利金：购买期权支付的价格＝内在价值＋时间价值。EN: The price paid for an option. Premium = intrinsic + extrinsic value. 公式: Premium = intrinsic + extrinsic",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics",
+   "pricing"
+  ],
+  "zh": "权利金",
+  "related": [
+   "intrinsic",
+   "extrinsic",
+   "iv"
+  ]
+ },
+ {
+  "id": "expiration",
+  "word": "Expiration",
+  "phonetic": "[Options / Basics]",
+  "translation": "到期日：期权存续的最后一天，之后结算或作废。EN: The last day the option exists. After it, the option settles or expires worthless.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics",
+   "time"
+  ],
+  "zh": "到期日",
+  "related": [
+   "theta",
+   "dte"
+  ]
+ },
+ {
+  "id": "dte",
+  "word": "Days to expiration (DTE)",
+  "phonetic": "[Options / Time]",
+  "translation": "剩余天数：距到期的日历天数；越少时间衰减越快。EN: Calendar days left until expiry. Fewer DTE means faster time decay.",
+  "category": "time",
+  "category_zh": "时间",
+  "tags": [
+   "time"
+  ],
+  "zh": "剩余天数",
+  "related": [
+   "theta",
+   "expiration"
+  ]
+ },
+ {
+  "id": "multiplier",
+  "word": "Contract multiplier",
+  "phonetic": "[Options / Basics]",
+  "translation": "合约乘数：一张美股期权对应 100 股；报价 2.50 实付 250 美元。EN: One US equity option controls 100 shares. A $2.50 quote costs $250.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "合约乘数",
+  "related": [
+   "premium"
+  ]
+ },
+ {
+  "id": "moneyness",
+  "word": "Moneyness",
+  "phonetic": "[Options / Basics]",
+  "translation": "价值状态：行权价相对现价的位置：实值/平值/虚值。EN: Where the strike sits relative to spot: ITM, ATM or OTM.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "价值状态",
+  "related": [
+   "itm",
+   "atm",
+   "otm"
+  ]
+ },
+ {
+  "id": "itm",
+  "word": "In the money (ITM)",
+  "phonetic": "[Options / Basics]",
+  "translation": "实值：有内在价值。认购 S>K，认沽 S<K。EN: Has intrinsic value. Call: S > K. Put: S < K.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "实值",
+  "related": [
+   "moneyness",
+   "intrinsic",
+   "delta"
+  ]
+ },
+ {
+  "id": "atm",
+  "word": "At the money (ATM)",
+  "phonetic": "[Options / Basics]",
+  "translation": "平值：行权价≈现价；时间价值、Gamma、Theta 最大。EN: Strike ≈ spot. Highest extrinsic value, gamma and theta.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "平值",
+  "related": [
+   "moneyness",
+   "gamma",
+   "straddle"
+  ]
+ },
+ {
+  "id": "otm",
+  "word": "Out of the money (OTM)",
+  "phonetic": "[Options / Basics]",
+  "translation": "虚值：无内在价值，纯时间与波动率价值。EN: No intrinsic value. Call: S < K. Put: S > K. Pure time + volatility value.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics"
+  ],
+  "zh": "虚值",
+  "related": [
+   "moneyness",
+   "extrinsic"
+  ]
+ },
+ {
+  "id": "intrinsic",
+  "word": "Intrinsic value",
+  "phonetic": "[Options / Pricing]",
+  "translation": "内在价值：立即行权可得的价值。EN: What the option is worth if exercised now. 公式: Call: max(S−K,0)  Put: max(K−S,0)",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing"
+  ],
+  "zh": "内在价值",
+  "related": [
+   "extrinsic",
+   "itm",
+   "premium"
+  ]
+ },
+ {
+  "id": "extrinsic",
+  "word": "Extrinsic (time) value",
+  "phonetic": "[Options / Pricing]",
+  "translation": "时间价值（外在价值）：权利金超出内在价值的部分，由时间和 IV 驱动，到期归零。EN: Premium above intrinsic. Driven by time and implied volatility. Decays to zero at expiry.",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing",
+   "time"
+  ],
+  "zh": "时间价值（外在价值）",
+  "related": [
+   "intrinsic",
+   "theta",
+   "iv"
+  ]
+ },
+ {
+  "id": "exercise",
+  "word": "Exercise",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "行权：使用合约权利：按行权价买入（认购）或卖出（认沽）。EN: Using the right in the contract: buying (call) or selling (put) at the strike.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "行权",
+  "related": [
+   "assignment",
+   "american",
+   "settlement"
+  ]
+ },
+ {
+  "id": "assignment",
+  "word": "Assignment",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "被指派：卖出的期权被对方行权，你必须交割或买入。EN: When a short option is exercised against you. You must deliver (short call) or buy (short put).",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics",
+   "risk"
+  ],
+  "zh": "被指派",
+  "related": [
+   "exercise",
+   "pin-risk",
+   "cash-secured-put"
+  ]
+ },
+ {
+  "id": "american",
+  "word": "American style",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "美式期权：到期前任何时间都可行权；多数美股个股期权。EN: Can be exercised any time before expiry. Most US single-stock options.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "美式期权",
+  "related": [
+   "european",
+   "exercise",
+   "early-exercise"
+  ]
+ },
+ {
+  "id": "european",
+  "word": "European style",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "欧式期权：只能在到期日行权；如 SPX 等指数期权。EN: Exercisable only at expiry. Most index options like SPX.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "欧式期权",
+  "related": [
+   "american"
+  ]
+ },
+ {
+  "id": "open-interest",
+  "word": "Open interest",
+  "phonetic": "[Options / Market]",
+  "translation": "未平仓合约：当前未平仓的合约数量，反映流动性与持仓分布。EN: Number of contracts currently open. Signals liquidity and where positioning sits.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market"
+  ],
+  "zh": "未平仓合约",
+  "related": [
+   "volume",
+   "gamma-squeeze"
+  ]
+ },
+ {
+  "id": "volume",
+  "word": "Volume",
+  "phonetic": "[Options / Market]",
+  "translation": "成交量：当日成交合约数；异常放量可能预示消息。EN: Contracts traded today. Unusual volume can flag news or positioning.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market"
+  ],
+  "zh": "成交量",
+  "related": [
+   "open-interest"
+  ]
+ },
+ {
+  "id": "bid-ask",
+  "word": "Bid–ask spread",
+  "phonetic": "[Options / Market]",
+  "translation": "买卖价差：最优买价与卖价之差；价差宽是隐性成本。EN: Gap between best buy and sell quotes. Wide spreads are a hidden cost.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market",
+   "risk"
+  ],
+  "zh": "买卖价差",
+  "related": [
+   "volume",
+   "open-interest",
+   "mid-price",
+   "limit-order",
+   "liquidity"
+  ]
+ },
+ {
+  "id": "iv",
+  "word": "Implied volatility (IV)",
+  "phonetic": "[Options / Volatility]",
+  "translation": "隐含波动率：由期权市场价格反推的未来波动率预期；IV 越高期权越贵。EN: The volatility the market is pricing into the option. Higher IV = more expensive options. 公式: Solved from market price via Black-Scholes",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "pricing"
+  ],
+  "zh": "隐含波动率",
+  "related": [
+   "vega",
+   "hv",
+   "iv-rank",
+   "iv-crush",
+   "black-scholes"
+  ]
+ },
+ {
+  "id": "hv",
+  "word": "Historical volatility (HV)",
+  "phonetic": "[Options / Volatility]",
+  "translation": "历史波动率：标的实际波动的年化值；与 IV 比较判断期权贵贱。EN: How much the stock actually moved, annualized. Compare to IV to judge if options are cheap or rich.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility"
+  ],
+  "zh": "历史波动率",
+  "related": [
+   "iv"
+  ]
+ },
+ {
+  "id": "iv-rank",
+  "word": "IV Rank",
+  "phonetic": "[Options / Volatility]",
+  "translation": "IV 等级：当前 IV 在一年区间内的位置（0–100），高表示期权偏贵。EN: Where today's IV sits in its 1-year range, 0–100. High = options relatively expensive. 公式: IVR = (IV − IVlow) / (IVhigh − IVlow) × 100",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "indicator"
+  ],
+  "zh": "IV 等级",
+  "related": [
+   "iv",
+   "credit-spread",
+   "iron-condor",
+   "iv-percentile"
+  ]
+ },
+ {
+  "id": "iv-crush",
+  "word": "IV crush",
+  "phonetic": "[Options / Volatility]",
+  "translation": "IV 暴跌：财报等事件后 IV 急降，即使股价变动期权也缩水。EN: Sharp drop in IV after a known event (earnings), deflating option prices even if the stock moves.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "events"
+  ],
+  "zh": "IV 暴跌",
+  "related": [
+   "iv",
+   "earnings",
+   "vega",
+   "straddle"
+  ]
+ },
+ {
+  "id": "vix",
+  "word": "VIX",
+  "phonetic": "[Options / Volatility]",
+  "translation": "VIX 恐慌指数：标普 500 的 30 天隐含波动率指数。EN: Index of 30-day implied volatility on the S&P 500. The market's \"fear gauge\".",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "market"
+  ],
+  "zh": "VIX 恐慌指数",
+  "related": [
+   "iv",
+   "skew",
+   "contango",
+   "term-structure"
+  ]
+ },
+ {
+  "id": "skew",
+  "word": "Volatility skew",
+  "phonetic": "[Options / Volatility]",
+  "translation": "波动率偏斜：不同行权价 IV 不同；股票认沽 IV 通常高于认购。EN: IV differs by strike. Equity puts usually carry higher IV than calls (crash insurance demand).",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility"
+  ],
+  "zh": "波动率偏斜",
+  "related": [
+   "iv",
+   "put",
+   "vix",
+   "volatility-smile",
+   "risk-reversal"
+  ]
+ },
+ {
+  "id": "expected-move",
+  "word": "Expected move",
+  "phonetic": "[Options / Volatility]",
+  "translation": "预期波动幅度：期权价格隐含的 ±1σ 区间；约等于平值跨式价格。EN: The ±1σ range implied by option prices. ATM straddle ≈ expected move. 公式: EM ≈ S × IV × √(days/365)",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "events"
+  ],
+  "zh": "预期波动幅度",
+  "related": [
+   "straddle",
+   "iv",
+   "earnings",
+   "standard-deviation"
+  ]
+ },
+ {
+  "id": "greeks",
+  "word": "The Greeks",
+  "phonetic": "[Options / Greeks]",
+  "translation": "希腊字母：期权价格对价格、时间、波动率、利率的敏感度。EN: Sensitivities of option price to price, time, volatility and rates.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks"
+  ],
+  "zh": "希腊字母",
+  "related": [
+   "delta",
+   "gamma",
+   "theta",
+   "vega",
+   "rho"
+  ]
+ },
+ {
+  "id": "delta",
+  "word": "Delta (Δ)",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Delta：标的每变动 1 美元期权价格的变化；也近似到期实值概率。EN: Price change per $1 move in the underlying. Also a rough probability of finishing ITM. 公式: Call 0…1, Put −1…0",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks"
+  ],
+  "zh": "Delta",
+  "related": [
+   "gamma",
+   "itm",
+   "hedging",
+   "delta-neutral",
+   "probability-itm"
+  ]
+ },
+ {
+  "id": "gamma",
+  "word": "Gamma (Γ)",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Gamma：Delta 随标的价格变化的速度；临近到期的平值最高。EN: How fast delta changes per $1 move. Highest ATM near expiry.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "risk"
+  ],
+  "zh": "Gamma",
+  "related": [
+   "delta",
+   "gamma-squeeze",
+   "atm"
+  ]
+ },
+ {
+  "id": "theta",
+  "word": "Theta (Θ)",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Theta：时间衰减导致的每日价值损失；买方付出、卖方收取。EN: Value lost per day from time decay. Buyers pay theta; sellers collect it.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "time"
+  ],
+  "zh": "Theta",
+  "related": [
+   "extrinsic",
+   "dte",
+   "credit-spread"
+  ]
+ },
+ {
+  "id": "vega",
+  "word": "Vega (ν)",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Vega：IV 每变动 1 个百分点期权价格的变化；多头期权做多 Vega。EN: Price change per 1-point change in IV. Long options are long vega.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "volatility"
+  ],
+  "zh": "Vega",
+  "related": [
+   "iv",
+   "iv-crush",
+   "calendar"
+  ]
+ },
+ {
+  "id": "rho",
+  "word": "Rho (ρ)",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Rho：利率每变动 1% 期权价格的变化；长期期权更明显。EN: Price change per 1% change in interest rates. Matters more for long-dated options.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks"
+  ],
+  "zh": "Rho",
+  "related": [
+   "leaps"
+  ]
+ },
+ {
+  "id": "black-scholes",
+  "word": "Black–Scholes model",
+  "phonetic": "[Options / Pricing]",
+  "translation": "布莱克-斯科尔斯模型：用 S、K、时间、利率、波动率定价的经典模型。EN: Classic pricing model using S, K, time, rate and volatility.",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing"
+  ],
+  "zh": "布莱克-斯科尔斯模型",
+  "related": [
+   "iv",
+   "greeks"
+  ]
+ },
+ {
+  "id": "hedging",
+  "word": "Delta hedging",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Delta 对冲：用股票抵消 Delta，使头寸对小幅波动中性。EN: Offsetting delta with stock so the position is neutral to small moves.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "mechanics"
+  ],
+  "zh": "Delta 对冲",
+  "related": [
+   "delta",
+   "gamma-squeeze"
+  ]
+ },
+ {
+  "id": "breakeven",
+  "word": "Breakeven",
+  "phonetic": "[Options / Strategy]",
+  "translation": "盈亏平衡点：到期时不赚不亏的标的价格。EN: Underlying price at expiry where the trade neither gains nor loses. 公式: Long call: K + premium. Long put: K − premium",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy"
+  ],
+  "zh": "盈亏平衡点",
+  "related": [
+   "premium",
+   "max-loss"
+  ]
+ },
+ {
+  "id": "max-loss",
+  "word": "Max loss",
+  "phonetic": "[Options / Risk]",
+  "translation": "最大亏损：最坏情况的亏损；裸卖可能无限。EN: Worst-case loss. Defined for debit trades and spreads; can be unlimited for naked shorts.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk"
+  ],
+  "zh": "最大亏损",
+  "related": [
+   "max-profit",
+   "position-sizing"
+  ]
+ },
+ {
+  "id": "max-profit",
+  "word": "Max profit",
+  "phonetic": "[Options / Risk]",
+  "translation": "最大盈利：策略最好情况的收益；价差与卖方有上限。EN: Best-case gain of a structure. Capped for spreads and short options.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk"
+  ],
+  "zh": "最大盈利",
+  "related": [
+   "max-loss"
+  ]
+ },
+ {
+  "id": "long-call",
+  "word": "Long call",
+  "phonetic": "[Options / Strategy]",
+  "translation": "买入看涨：看涨、风险有限，需要涨幅超过权利金。EN: Buy a call. Bullish, defined risk, needs a move bigger than the premium.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "bullish"
+  ],
+  "zh": "买入看涨",
+  "related": [
+   "call",
+   "breakeven",
+   "theta"
+  ]
+ },
+ {
+  "id": "long-put",
+  "word": "Long put",
+  "phonetic": "[Options / Strategy]",
+  "translation": "买入看跌：看跌或保护用途，风险有限。EN: Buy a put. Bearish or protective, defined risk.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "bearish"
+  ],
+  "zh": "买入看跌",
+  "related": [
+   "put",
+   "protective-put"
+  ]
+ },
+ {
+  "id": "covered-call",
+  "word": "Covered call",
+  "phonetic": "[Options / Strategy]",
+  "translation": "备兑看涨：持有 100 股并卖出认购：赚收入、封顶上涨。EN: Own 100 shares, sell a call against them. Earn income, cap upside.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "income"
+  ],
+  "zh": "备兑看涨",
+  "related": [
+   "call",
+   "theta",
+   "assignment",
+   "wheel",
+   "pmcc"
+  ]
+ },
+ {
+  "id": "cash-secured-put",
+  "word": "Cash-secured put",
+  "phonetic": "[Options / Strategy]",
+  "translation": "现金担保卖沽：备足现金卖出认沽，被指派则低价买股。EN: Sell a put with cash set aside to buy shares if assigned. Get paid to wait for a lower price.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "income",
+   "bullish"
+  ],
+  "zh": "现金担保卖沽",
+  "related": [
+   "put",
+   "assignment",
+   "theta",
+   "wheel"
+  ]
+ },
+ {
+  "id": "protective-put",
+  "word": "Protective put",
+  "phonetic": "[Options / Strategy]",
+  "translation": "保护性看跌：持股并买入认沽，为下跌投保。EN: Own shares plus buy a put: insurance against a drop.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "hedge"
+  ],
+  "zh": "保护性看跌",
+  "related": [
+   "put",
+   "skew",
+   "married-put"
+  ]
+ },
+ {
+  "id": "collar",
+  "word": "Collar",
+  "phonetic": "[Options / Strategy]",
+  "translation": "领口策略：持股＋买认沽＋卖认购抵成本，结果有上下界。EN: Own shares, buy a put, sell a call to pay for it. Bounded outcome.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "hedge"
+  ],
+  "zh": "领口策略",
+  "related": [
+   "protective-put",
+   "covered-call"
+  ]
+ },
+ {
+  "id": "vertical",
+  "word": "Vertical spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "垂直价差：同类型、同到期、不同行权价一买一卖，风险收益有限。EN: Buy and sell same-type options, same expiry, different strikes. Defined risk and reward.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread"
+  ],
+  "zh": "垂直价差",
+  "related": [
+   "bull-call-spread",
+   "bear-put-spread",
+   "credit-spread",
+   "debit-spread"
+  ]
+ },
+ {
+  "id": "debit-spread",
+  "word": "Debit spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "借方价差：付钱开仓，方向对即获利；比单腿成本与 Vega 低。EN: Pay to open. Profit if the move happens. Lower cost and vega than a single long option.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread"
+  ],
+  "zh": "借方价差",
+  "related": [
+   "vertical",
+   "bull-call-spread"
+  ]
+ },
+ {
+  "id": "credit-spread",
+  "word": "Credit spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "贷方价差：收钱开仓，价格远离卖出行权价即获利；受益于 Theta 与 IV 下降。EN: Get paid to open. Profit if price stays away from the short strike. Benefits from theta and falling IV.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "income"
+  ],
+  "zh": "贷方价差",
+  "related": [
+   "vertical",
+   "iv-rank",
+   "theta",
+   "bull-put-spread",
+   "bear-call-spread"
+  ]
+ },
+ {
+  "id": "bull-call-spread",
+  "word": "Bull call spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "牛市看涨价差：买低行权价认购＋卖高行权价认购；温和看涨。EN: Long lower call + short higher call. Moderately bullish, defined risk.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "bullish"
+  ],
+  "zh": "牛市看涨价差",
+  "related": [
+   "vertical",
+   "debit-spread"
+  ]
+ },
+ {
+  "id": "bear-put-spread",
+  "word": "Bear put spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "熊市看跌价差：买高行权价认沽＋卖低行权价认沽；温和看跌。EN: Long higher put + short lower put. Moderately bearish, defined risk.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "bearish"
+  ],
+  "zh": "熊市看跌价差",
+  "related": [
+   "vertical",
+   "debit-spread"
+  ]
+ },
+ {
+  "id": "straddle",
+  "word": "Straddle",
+  "phonetic": "[Options / Strategy]",
+  "translation": "跨式：同行权价认购＋认沽；买入赌大波动，卖出赌平静。EN: Call + put at the same strike. Long = bet on a big move either way; short = bet on calm.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "volatility"
+  ],
+  "zh": "跨式",
+  "related": [
+   "strangle",
+   "expected-move",
+   "iv-crush",
+   "short-straddle"
+  ]
+ },
+ {
+  "id": "strangle",
+  "word": "Strangle",
+  "phonetic": "[Options / Strategy]",
+  "translation": "宽跨式：虚值认购＋虚值认沽；比跨式便宜但需更大波动。EN: OTM call + OTM put. Cheaper than a straddle, needs a bigger move.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "volatility"
+  ],
+  "zh": "宽跨式",
+  "related": [
+   "straddle",
+   "iron-condor",
+   "short-strangle"
+  ]
+ },
+ {
+  "id": "iron-condor",
+  "word": "Iron condor",
+  "phonetic": "[Options / Strategy]",
+  "translation": "铁鹰：卖虚值认沽价差＋卖虚值认购价差；区间震荡获利。EN: Short OTM put spread + short OTM call spread. Profit if price stays in a range. Defined risk.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "income",
+   "neutral"
+  ],
+  "zh": "铁鹰",
+  "related": [
+   "credit-spread",
+   "strangle",
+   "iv-rank"
+  ]
+ },
+ {
+  "id": "butterfly",
+  "word": "Butterfly",
+  "phonetic": "[Options / Strategy]",
+  "translation": "蝶式：买低、卖二中、买高；低成本押注价格收于中间。EN: 1 long low, 2 short middle, 1 long high strike. Cheap bet on price pinning near the middle.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "neutral"
+  ],
+  "zh": "蝶式",
+  "related": [
+   "vertical",
+   "pin-risk",
+   "iron-butterfly",
+   "broken-wing"
+  ]
+ },
+ {
+  "id": "calendar",
+  "word": "Calendar spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "日历价差：卖近月、买远月同行权价；赚近月更快的衰减。EN: Sell near-term, buy longer-term option at the same strike. Profits from faster near-term decay and IV term structure.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "time",
+   "volatility"
+  ],
+  "zh": "日历价差",
+  "related": [
+   "theta",
+   "vega",
+   "diagonal"
+  ]
+ },
+ {
+  "id": "leaps",
+  "word": "LEAPS",
+  "phonetic": "[Options / Strategy]",
+  "translation": "长期期权 LEAPS：期限超过一年，更像股票，对 Rho 与 Vega 敏感。EN: Long-dated options (over 1 year). Behave more like stock, sensitive to rho and vega.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "time"
+  ],
+  "zh": "长期期权 LEAPS",
+  "related": [
+   "rho",
+   "long-call"
+  ]
+ },
+ {
+  "id": "roll",
+  "word": "Rolling",
+  "phonetic": "[Options / Management]",
+  "translation": "移仓：平掉头寸并在不同行权价或到期日开类似仓位。EN: Close a position and open a similar one at a different strike or expiry.",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management"
+  ],
+  "zh": "移仓",
+  "related": [
+   "assignment",
+   "credit-spread"
+  ]
+ },
+ {
+  "id": "pin-risk",
+  "word": "Pin risk",
+  "phonetic": "[Options / Management]",
+  "translation": "钉住风险：到期收盘恰在卖出行权价附近时的指派不确定性。EN: Uncertainty about assignment when price closes right at a short strike on expiry.",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management",
+   "risk"
+  ],
+  "zh": "钉住风险",
+  "related": [
+   "assignment",
+   "butterfly"
+  ]
+ },
+ {
+  "id": "gamma-squeeze",
+  "word": "Gamma squeeze",
+  "phonetic": "[Options / Market]",
+  "translation": "Gamma 挤压：做市商为对冲买入股票推高价格，形成循环。EN: Dealers short calls buy stock to hedge as price rises, pushing price higher in a loop.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market",
+   "risk"
+  ],
+  "zh": "Gamma 挤压",
+  "related": [
+   "gamma",
+   "hedging",
+   "open-interest"
+  ]
+ },
+ {
+  "id": "earnings",
+  "word": "Earnings event",
+  "phonetic": "[Options / Events]",
+  "translation": "财报事件：定期财报带来价格与 IV 跳升，随后 IV 暴跌。EN: Scheduled report that drives a jump in price and IV, then IV crush.",
+  "category": "events",
+  "category_zh": "事件",
+  "tags": [
+   "events"
+  ],
+  "zh": "财报事件",
+  "related": [
+   "iv-crush",
+   "expected-move"
+  ]
+ },
+ {
+  "id": "position-sizing",
+  "word": "Position sizing",
+  "phonetic": "[Options / Management]",
+  "translation": "仓位管理：每笔只冒账户固定小比例（常 1–5%）风险。EN: Risking a small, fixed % of the account per trade (often 1–5%) so one loss can't sink you.",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management",
+   "risk"
+  ],
+  "zh": "仓位管理",
+  "related": [
+   "max-loss",
+   "kelly"
+  ]
+ },
+ {
+  "id": "rsi",
+  "word": "RSI",
+  "phonetic": "[Options / Indicator]",
+  "translation": "相对强弱指数 RSI：0–100 动量指标；>70 超买，<30 超卖。EN: Relative Strength Index, 0–100 momentum oscillator. Above 70 = overbought, below 30 = oversold.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator"
+  ],
+  "zh": "相对强弱指数 RSI",
+  "related": [
+   "moving-average"
+  ]
+ },
+ {
+  "id": "moving-average",
+  "word": "Moving average",
+  "phonetic": "[Options / Indicator]",
+  "translation": "移动平均线：N 日平均价（如 50/200）；价格在上方为上升趋势。EN: Average price over N days (e.g. 50/200). Price above = uptrend context.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator"
+  ],
+  "zh": "移动平均线",
+  "related": [
+   "rsi"
+  ]
+ },
+ {
+  "id": "option-chain",
+  "word": "Option chain",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "期权链：某标的所有到期与行权价的认购认沽报价表。EN: Table of every call and put on one underlying, by expiry and strike, with bid, ask, volume, open interest and Greeks. 例: A $100 stock may list strikes from $80 to $120 in $1 steps for each expiry.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "期权链",
+  "related": [
+   "strike",
+   "expiration",
+   "bid-ask",
+   "open-interest",
+   "mid-price"
+  ]
+ },
+ {
+  "id": "weekly",
+  "word": "Weekly options",
+  "phonetic": "[Options / Time]",
+  "translation": "周期权：每周（通常周五）到期；Theta 快、Gamma 高。EN: Options that expire every week (usually Friday), not just the monthly third Friday. Fast theta, high gamma. 例: A weekly bought Monday has 4 DTE; most of its extrinsic value can be gone by Friday.",
+  "category": "time",
+  "category_zh": "时间",
+  "tags": [
+   "time"
+  ],
+  "zh": "周期权",
+  "related": [
+   "expiration",
+   "dte",
+   "0dte",
+   "theta",
+   "gamma"
+  ]
+ },
+ {
+  "id": "0dte",
+  "word": "0DTE options",
+  "phonetic": "[Options / Time]",
+  "translation": "末日期权 0DTE：当天到期；权利金小、Gamma 极高。EN: Options that expire the same day they are traded. Tiny premium, extreme gamma: small moves can mean a 100% loss or a multi-bagger. 例: A 0DTE SPX call bought for $1.00 at 10 a.m. can be worth $5 or $0 by the 4 p.m. close.",
+  "category": "time",
+  "category_zh": "时间",
+  "tags": [
+   "time",
+   "risk"
+  ],
+  "zh": "末日期权 0DTE",
+  "related": [
+   "weekly",
+   "gamma",
+   "theta",
+   "dte",
+   "expiration"
+  ]
+ },
+ {
+  "id": "early-exercise",
+  "word": "Early exercise",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "提前行权：美式期权到期前行权，会放弃时间价值；多在除息前。EN: Exercising an American option before expiry. It throws away extrinsic value, so for calls it mostly makes sense just before an ex-dividend date. 例: ITM call with $0.05 extrinsic and a $0.50 dividend tomorrow: exercising today captures the dividend.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "提前行权",
+  "related": [
+   "american",
+   "exercise",
+   "extrinsic",
+   "ex-dividend",
+   "dividend-risk"
+  ]
+ },
+ {
+  "id": "settlement",
+  "word": "Settlement (cash vs physical)",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "结算方式（现金/实物）：实物交割股票，现金结算实值金额（如 SPX）。EN: How an exercised option is paid. Physical: shares change hands (stocks, ETFs). Cash: the ITM amount is paid in cash (SPX, most indexes). 例: An SPX 5000 call settling at 5020 pays $20 × 100 = $2,000 cash; no shares are delivered.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "结算方式（现金/实物）",
+  "related": [
+   "exercise",
+   "assignment",
+   "european",
+   "expiration",
+   "pin-risk"
+  ]
+ },
+ {
+  "id": "limit-order",
+  "word": "Limit order",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "限价单：只以指定或更优价格成交；期权交易关键。EN: An order to trade only at your price or better. Key for options, where market orders can fill far from fair value. 例: Bid $1.80, ask $2.20: place a buy limit at $2.00 instead of paying the $2.20 ask.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "限价单",
+  "related": [
+   "mid-price",
+   "bid-ask",
+   "slippage",
+   "liquidity"
+  ]
+ },
+ {
+  "id": "mid-price",
+  "word": "Mid price",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "中间价：买卖价的中点，常作公允价值与限价起点。EN: Halfway between the bid and the ask. A common estimate of fair value and a good starting limit price. 公式: Mid = (bid + ask) / 2 例: Bid $1.80, ask $2.20 → mid $2.00.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics",
+   "pricing"
+  ],
+  "zh": "中间价",
+  "related": [
+   "bid-ask",
+   "limit-order",
+   "slippage",
+   "option-chain"
+  ]
+ },
+ {
+  "id": "liquidity",
+  "word": "Liquidity",
+  "phonetic": "[Options / Market]",
+  "translation": "流动性：不推动价格即可成交的难易度。EN: How easily you can trade without moving the price. Liquid options have tight bid–ask spreads, high volume and open interest. 例: SPY options often quote $0.01 wide; a thin small-cap option may be $0.50 wide.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market"
+  ],
+  "zh": "流动性",
+  "related": [
+   "bid-ask",
+   "volume",
+   "open-interest",
+   "slippage"
+  ]
+ },
+ {
+  "id": "slippage",
+  "word": "Slippage",
+  "phonetic": "[Options / Market]",
+  "translation": "滑点：预期价格与实际成交价之差。EN: The gap between the price you expected and the fill you got. Wide spreads and fast markets make it bigger. 例: Mid is $2.00 but a market order fills at $2.20: $0.20 × 100 = $20 lost per contract.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market",
+   "risk"
+  ],
+  "zh": "滑点",
+  "related": [
+   "bid-ask",
+   "liquidity",
+   "limit-order",
+   "mid-price"
+  ]
+ },
+ {
+  "id": "margin",
+  "word": "Margin",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "保证金：券商为可能超额亏损的交易持有的抵押品。EN: Collateral the broker holds against trades that can lose more than you paid, like short options. A margin call forces you to add cash or close. 例: A $5-wide credit spread sold for $1.50 ties up $350 of margin (width − credit).",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics",
+   "risk"
+  ],
+  "zh": "保证金",
+  "related": [
+   "buying-power",
+   "naked-call",
+   "leverage",
+   "credit-spread"
+  ]
+ },
+ {
+  "id": "buying-power",
+  "word": "Buying power",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "购买力：扣除保证金后可开新仓的资金。EN: Money available to open new trades after margin requirements. Short options and spreads use it up. 例: Selling a $50 cash-secured put for $1 ties up about $4,900 of buying power.",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "购买力",
+  "related": [
+   "margin",
+   "cash-secured-put",
+   "leverage",
+   "position-sizing"
+  ]
+ },
+ {
+  "id": "options-level",
+  "word": "Options approval level",
+  "phonetic": "[Options / Mechanics]",
+  "translation": "期权权限等级：券商允许的期权交易层级。EN: Broker permission tier that limits which option trades you may place, from covered calls up to naked selling. 例: Typical tiers: 1 covered calls, 2 long options, 3 spreads, 4 naked options (varies by broker).",
+  "category": "mechanics",
+  "category_zh": "交易机制",
+  "tags": [
+   "mechanics"
+  ],
+  "zh": "期权权限等级",
+  "related": [
+   "margin",
+   "naked-call",
+   "covered-call",
+   "credit-spread"
+  ]
+ },
+ {
+  "id": "dividend-risk",
+  "word": "Dividend assignment risk",
+  "phonetic": "[Options / Risk]",
+  "translation": "分红指派风险：除息前一日实值卖出认购可能被提前指派。EN: A short ITM call may be assigned early the day before ex-dividend, leaving you short stock and owing the dividend. 例: Short call with $0.10 extrinsic, $0.60 dividend tomorrow: expect early assignment tonight.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk",
+   "events"
+  ],
+  "zh": "分红指派风险",
+  "related": [
+   "early-exercise",
+   "ex-dividend",
+   "assignment",
+   "covered-call",
+   "american"
+  ]
+ },
+ {
+  "id": "ex-dividend",
+  "word": "Ex-dividend date",
+  "phonetic": "[Options / Events]",
+  "translation": "除息日：股票不再附带下次分红的首日，股价约跌分红额。EN: First day a stock trades without its next dividend. Own shares before it to get paid. Price tends to drop by about the dividend. 例: A $100 stock paying a $1 dividend tends to open near $99 on the ex-date, all else equal.",
+  "category": "events",
+  "category_zh": "事件",
+  "tags": [
+   "events"
+  ],
+  "zh": "除息日",
+  "related": [
+   "early-exercise",
+   "dividend-risk",
+   "covered-call"
+  ]
+ },
+ {
+  "id": "leverage",
+  "word": "Leverage",
+  "phonetic": "[Options / Basics]",
+  "translation": "杠杆：以少量资金控制大敞口，盈亏同时放大。EN: Controlling a large exposure with little capital. Options magnify both gains and losses in percent terms. 例: Buy a $100-strike call for $2: a rise to $105 makes it worth $5 at expiry (+150%); below $100 it is −100%.",
+  "category": "basics",
+  "category_zh": "基础",
+  "tags": [
+   "basics",
+   "risk"
+  ],
+  "zh": "杠杆",
+  "related": [
+   "premium",
+   "multiplier",
+   "margin",
+   "delta",
+   "position-sizing"
+  ]
+ },
+ {
+  "id": "volatility-smile",
+  "word": "Volatility smile",
+  "phonetic": "[Options / Volatility]",
+  "translation": "波动率微笑：同一到期不同行权价的 IV 曲线，两端上翘。EN: IV plotted across strikes for one expiry. It curves up at the far OTM strikes; in stocks it tilts down to the right (skew). 例: IV might be 30% at the $80 put, 20% ATM and 22% at the $120 call.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility"
+  ],
+  "zh": "波动率微笑",
+  "related": [
+   "skew",
+   "iv",
+   "term-structure",
+   "otm"
+  ]
+ },
+ {
+  "id": "term-structure",
+  "word": "Volatility term structure",
+  "phonetic": "[Options / Volatility]",
+  "translation": "波动率期限结构：不同到期日的 IV 曲线。EN: IV plotted across expiries. Normally longer-dated IV is higher; it inverts in panics or before a big event. 例: Earnings in 5 days: weekly IV 60%, next month 35% — an inverted term structure.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "time"
+  ],
+  "zh": "波动率期限结构",
+  "related": [
+   "iv",
+   "contango",
+   "backwardation",
+   "calendar",
+   "vix"
+  ]
+ },
+ {
+  "id": "contango",
+  "word": "Contango",
+  "phonetic": "[Options / Volatility]",
+  "translation": "期货升水：远期价格/IV 高于近期，平静市场常态。EN: Longer-dated VIX futures priced above spot VIX. The normal calm-market state; long-VIX products bleed as futures roll down. 例: Spot VIX 14, 1-month future 16, 3-month future 18: contango.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "market"
+  ],
+  "zh": "期货升水",
+  "related": [
+   "backwardation",
+   "vix",
+   "term-structure"
+  ]
+ },
+ {
+  "id": "backwardation",
+  "word": "Backwardation",
+  "phonetic": "[Options / Volatility]",
+  "translation": "期货贴水：近期价格/IV 高于远期，常见于恐慌时。EN: Near-term VIX futures priced above longer-dated ones, usually with spot VIX on top. A sign of fear and market stress. 例: Sell-off day: spot VIX 40, 1-month future 32, 3-month future 27: backwardation.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "market"
+  ],
+  "zh": "期货贴水",
+  "related": [
+   "contango",
+   "vix",
+   "term-structure",
+   "tail-risk"
+  ]
+ },
+ {
+  "id": "iv-percentile",
+  "word": "IV percentile",
+  "phonetic": "[Options / Volatility]",
+  "translation": "IV 百分位：过去一年 IV 低于当前值的天数占比。EN: Share of days in the past year when IV was below today's IV. Less distorted by one spike than IV rank. 公式: IVP = days with IV below today / total days × 100 例: IV was lower than today on 200 of 252 days → IV percentile ≈ 79.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility",
+   "indicator"
+  ],
+  "zh": "IV 百分位",
+  "related": [
+   "iv-rank",
+   "iv",
+   "hv"
+  ]
+ },
+ {
+  "id": "put-call-parity",
+  "word": "Put–call parity",
+  "phonetic": "[Options / Pricing]",
+  "translation": "认购认沽平价：同行权价同到期的认购、认沽、股票、现金间的定价关系。EN: Ties European call and put prices at the same strike and expiry to the stock price. If it breaks, arbitrage exists. 公式: C − P = S − K·e^(−rT) 例: S $100, K $100, r 5%, T 1 year, no dividend: C − P ≈ 100 − 95.12 = $4.88.",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing"
+  ],
+  "zh": "认购认沽平价",
+  "related": [
+   "synthetic-long",
+   "risk-free-rate",
+   "black-scholes",
+   "european"
+  ]
+ },
+ {
+  "id": "risk-free-rate",
+  "word": "Risk-free rate",
+  "phonetic": "[Options / Pricing]",
+  "translation": "无风险利率：定价模型用的利率，通常取国债收益率。EN: Return on a safe asset, usually short-term Treasury bills. A model input: higher rates raise call prices and lower put prices. 例: At r = 5%, $100 due in 1 year is worth 100 × e^(−0.05) ≈ $95.12 today.",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing"
+  ],
+  "zh": "无风险利率",
+  "related": [
+   "rho",
+   "black-scholes",
+   "put-call-parity"
+  ]
+ },
+ {
+  "id": "probability-itm",
+  "word": "Probability ITM",
+  "phonetic": "[Options / Pricing]",
+  "translation": "实值概率：到期时处于实值的概率，约等于 Delta。EN: Model estimate of the chance an option finishes in the money at expiry. Delta is a common rough proxy. 公式: Call: N(d2) in Black–Scholes; ≈ |Δ| 例: A 0.30-delta call has roughly a 30% chance of expiring ITM.",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing"
+  ],
+  "zh": "实值概率",
+  "related": [
+   "delta",
+   "probability-of-profit",
+   "iv",
+   "standard-deviation"
+  ]
+ },
+ {
+  "id": "probability-of-profit",
+  "word": "Probability of profit (POP)",
+  "phonetic": "[Options / Pricing]",
+  "translation": "盈利概率 POP：到期时至少赚 1 分钱的概率。EN: Chance a trade makes at least $0.01 at expiry. Short premium has high POP but small wins; long options the reverse. 例: Sell a 0.20-delta put for $1: POP is a bit above 80%, since breakeven is $1 below the strike.",
+  "category": "pricing",
+  "category_zh": "定价",
+  "tags": [
+   "pricing",
+   "risk"
+  ],
+  "zh": "盈利概率 POP",
+  "related": [
+   "probability-itm",
+   "breakeven",
+   "expected-value",
+   "credit-spread"
+  ]
+ },
+ {
+  "id": "standard-deviation",
+  "word": "Standard-deviation move",
+  "phonetic": "[Options / Volatility]",
+  "translation": "标准差波动：以 σ 衡量的价格波动幅度。EN: Typical move size implied by IV. In a normal model about 68% of outcomes land within ±1σ and 95% within ±2σ. 公式: 1σ move ≈ S × IV × √(DTE/365) 例: $100 stock, IV 32%, 30 DTE: 1σ ≈ 100 × 0.32 × √(30/365) ≈ $9.17.",
+  "category": "volatility",
+  "category_zh": "波动率",
+  "tags": [
+   "volatility"
+  ],
+  "zh": "标准差波动",
+  "related": [
+   "expected-move",
+   "iv",
+   "probability-itm",
+   "tail-risk"
+  ]
+ },
+ {
+  "id": "vanna",
+  "word": "Vanna",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Vanna：Delta 对 IV 的敏感度（二阶希腊字母）。EN: How delta changes when IV changes (and how vega changes when price moves). Explains why OTM deltas shrink when IV falls. 公式: Vanna = ∂Δ/∂σ = ∂ν/∂S 例: An OTM call has 0.25 delta at 30% IV; if IV drops to 20% its delta may fall toward 0.15.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks"
+  ],
+  "zh": "Vanna",
+  "related": [
+   "delta",
+   "vega",
+   "iv",
+   "greeks",
+   "skew"
+  ]
+ },
+ {
+  "id": "gamma-scalping",
+  "word": "Gamma scalping",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Gamma 剥头皮：持有多头 Gamma 并反复 Delta 对冲赚取波动。EN: Own options (long gamma) and re-hedge delta with stock as price moves: sell rallies, buy dips. Pays if realized volatility beats implied. 例: Delta-neutral long straddle: stock jumps, sell 40 shares to flatten; it falls back, buy them back cheaper.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "strategy"
+  ],
+  "zh": "Gamma 剥头皮",
+  "related": [
+   "gamma",
+   "hedging",
+   "delta-neutral",
+   "hv",
+   "theta"
+  ]
+ },
+ {
+  "id": "delta-neutral",
+  "word": "Delta neutral",
+  "phonetic": "[Options / Greeks]",
+  "translation": "Delta 中性：总 Delta≈0，对小幅方向变动不敏感。EN: A position with total delta near zero, so small price moves barely change its value. It still has gamma, theta and vega. 例: Long 2 calls at 0.50 delta = +100 delta; short 100 shares → delta neutral.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "neutral"
+  ],
+  "zh": "Delta 中性",
+  "related": [
+   "delta",
+   "hedging",
+   "gamma-scalping",
+   "short-straddle",
+   "dollar-delta"
+  ]
+ },
+ {
+  "id": "beta-weighting",
+  "word": "Beta weighting",
+  "phonetic": "[Options / Risk]",
+  "translation": "Beta 加权：把各头寸 Delta 折算为对同一指数的敞口。EN: Converting each position's delta into SPY-equivalent deltas using the stock's beta, so total market exposure is one number. 公式: β-weighted Δ = Δ × β × (S / S_index) 例: +100 delta on a $200 stock, beta 1.5, SPY $500: 100 × 1.5 × 200/500 = +60 SPY deltas.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk",
+   "management"
+  ],
+  "zh": "Beta 加权",
+  "related": [
+   "dollar-delta",
+   "delta",
+   "correlation",
+   "position-sizing"
+  ]
+ },
+ {
+  "id": "dollar-delta",
+  "word": "Dollar delta",
+  "phonetic": "[Options / Greeks]",
+  "translation": "美元 Delta：Delta×股价×乘数，表示等值美元敞口。EN: Stock-equivalent dollar exposure of an option position. Lets you compare positions on stocks with different prices. 公式: $Δ = Δ × 100 × contracts × S 例: 5 calls at 0.40 delta on a $50 stock: 0.40 × 500 × $50 = $10,000, about $100 per 1% move.",
+  "category": "greeks",
+  "category_zh": "希腊字母",
+  "tags": [
+   "greeks",
+   "risk"
+  ],
+  "zh": "美元 Delta",
+  "related": [
+   "delta",
+   "beta-weighting",
+   "leverage",
+   "position-sizing"
+  ]
+ },
+ {
+  "id": "bear-call-spread",
+  "word": "Bear call spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "熊市看涨价差：卖低行权价认购＋买高行权价认购；收钱看不涨。EN: Sell a lower-strike call, buy a higher-strike call, same expiry. A credit spread that profits if price stays below the short strike. 公式: Max loss = width − credit; BE = short K + credit 例: Stock $100: sell the $105/$110 call spread for $1.50. Max profit $150, max loss $350, breakeven $106.50.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "bearish",
+   "income"
+  ],
+  "zh": "熊市看涨价差",
+  "related": [
+   "credit-spread",
+   "vertical",
+   "bull-put-spread",
+   "iron-condor",
+   "bear-put-spread"
+  ]
+ },
+ {
+  "id": "bull-put-spread",
+  "word": "Bull put spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "牛市看跌价差：卖高行权价认沽＋买低行权价认沽；收钱看不跌。EN: Sell a higher-strike put, buy a lower-strike put, same expiry. A credit spread that profits if price stays above the short strike. 公式: Max loss = width − credit; BE = short K − credit 例: Sell the $95/$90 put spread for $1.50: max profit $150, max loss $350, breakeven $93.50.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "bullish",
+   "income"
+  ],
+  "zh": "牛市看跌价差",
+  "related": [
+   "credit-spread",
+   "vertical",
+   "bear-call-spread",
+   "iron-condor",
+   "cash-secured-put"
+  ]
+ },
+ {
+  "id": "iron-butterfly",
+  "word": "Iron butterfly",
+  "phonetic": "[Options / Strategy]",
+  "translation": "铁蝶：卖平值跨式＋买两翼保护；押注价格钉在中间。EN: Sell an ATM call and put, buy OTM wings for protection. More credit than an iron condor, but price must stay near the middle strike. 公式: Max loss = wing width − credit 例: Stock $100: sell the $100 call and put, buy the $90 put and $110 call for $6. Max loss $400; breakevens $94 and $106.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "neutral",
+   "income"
+  ],
+  "zh": "铁蝶",
+  "related": [
+   "iron-condor",
+   "butterfly",
+   "short-straddle",
+   "credit-spread"
+  ]
+ },
+ {
+  "id": "short-straddle",
+  "word": "Short straddle",
+  "phonetic": "[Options / Strategy]",
+  "translation": "卖出跨式：卖同行权价认购与认沽；赌平静，风险无限。EN: Sell a call and a put at the same (usually ATM) strike. Big credit; profits if price stays near the strike. Undefined risk. 公式: BE = K ± total credit 例: Sell the $100 straddle for $8: profit between $92 and $108 at expiry; losses grow fast beyond.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "neutral",
+   "income"
+  ],
+  "zh": "卖出跨式",
+  "related": [
+   "straddle",
+   "short-strangle",
+   "iron-butterfly",
+   "iv-crush",
+   "naked-call"
+  ]
+ },
+ {
+  "id": "short-strangle",
+  "word": "Short strangle",
+  "phonetic": "[Options / Strategy]",
+  "translation": "卖出宽跨式：卖虚值认购与认沽；区间内获利，风险无限。EN: Sell an OTM call and an OTM put. Wider profit zone than a short straddle, less credit. Undefined risk on both sides. 公式: BE = put K − credit and call K + credit 例: Stock $100: sell the $90 put and $110 call for $3 total. Profit between $87 and $113 at expiry.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "neutral",
+   "income"
+  ],
+  "zh": "卖出宽跨式",
+  "related": [
+   "strangle",
+   "short-straddle",
+   "iron-condor",
+   "naked-call",
+   "tail-risk"
+  ]
+ },
+ {
+  "id": "ratio-spread",
+  "word": "Ratio spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "比例价差：买卖数量不等的期权，如买 1 卖 2。EN: Buy one option and sell more of a farther-OTM one of the same type, e.g. 1×2. Cheap or credit entry, but the extra short is naked. 例: Buy one $100 call, sell two $110 calls for $0 net: max profit $1,000 at $110; losses start above $120.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread"
+  ],
+  "zh": "比例价差",
+  "related": [
+   "backspread",
+   "vertical",
+   "naked-call",
+   "butterfly"
+  ]
+ },
+ {
+  "id": "backspread",
+  "word": "Backspread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "反比例价差：卖少买多，押注大幅波动。EN: Sell one option and buy more farther-OTM ones of the same type, e.g. 1×2. Profits from a big move one way; worst case is at the long strike. 例: Sell one $100 call, buy two $110 calls for $0 net: lose $1,000 at $110 at expiry, profit above $120.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "volatility"
+  ],
+  "zh": "反比例价差",
+  "related": [
+   "ratio-spread",
+   "long-call",
+   "vega",
+   "gamma"
+  ]
+ },
+ {
+  "id": "diagonal",
+  "word": "Diagonal spread",
+  "phonetic": "[Options / Strategy]",
+  "translation": "对角价差：不同行权价、不同到期日的一买一卖。EN: Buy a longer-dated option and sell a shorter-dated one at a different strike. A mix of a calendar and a vertical spread. 例: Buy a 90-day $95 call, sell a 30-day $105 call, then sell a new short call each month.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread",
+   "time"
+  ],
+  "zh": "对角价差",
+  "related": [
+   "calendar",
+   "vertical",
+   "pmcc",
+   "theta"
+  ]
+ },
+ {
+  "id": "pmcc",
+  "word": "Poor man's covered call",
+  "phonetic": "[Options / Strategy]",
+  "translation": "穷人版备兑：用长期深度实值认购代替股票，卖近月认购。EN: A covered call that uses a deep ITM LEAPS call instead of 100 shares. Much less capital, but it is really a diagonal spread. 例: Stock $100: instead of $10,000 for shares, buy a 1-year $80 call for ~$2,500 and sell 30-day $110 calls against it.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "income"
+  ],
+  "zh": "穷人版备兑",
+  "related": [
+   "covered-call",
+   "leaps",
+   "diagonal",
+   "delta"
+  ]
+ },
+ {
+  "id": "wheel",
+  "word": "The wheel",
+  "phonetic": "[Options / Strategy]",
+  "translation": "车轮策略：卖认沽→被指派持股→卖备兑认购→循环。EN: Sell cash-secured puts until assigned, then sell covered calls until the shares are called away. Repeat. Income, but full stock risk. 例: Sell a $50 put for $1, get assigned, sell a $52 call for $1, get called away: $4 per share in total.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "income"
+  ],
+  "zh": "车轮策略",
+  "related": [
+   "cash-secured-put",
+   "covered-call",
+   "assignment",
+   "theta"
+  ]
+ },
+ {
+  "id": "synthetic-long",
+  "word": "Synthetic long stock",
+  "phonetic": "[Options / Strategy]",
+  "translation": "合成多头股票：买认购＋卖认沽同行权价，等效持股。EN: Buy a call and sell a put at the same strike and expiry. Behaves like 100 shares, with the same downside risk, for little cash. 公式: Long call + short put ≈ long stock 例: Buy the $100 call for $5, sell the $100 put for $4.50: $0.50 debit; P&L ≈ 100 shares bought near $100.50.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "bullish"
+  ],
+  "zh": "合成多头股票",
+  "related": [
+   "put-call-parity",
+   "risk-reversal",
+   "leverage",
+   "margin"
+  ]
+ },
+ {
+  "id": "risk-reversal",
+  "word": "Risk reversal",
+  "phonetic": "[Options / Strategy]",
+  "translation": "风险逆转：卖虚值认沽买虚值认购（或反之），也指偏斜度量。EN: Sell an OTM put and buy an OTM call (bullish), or the reverse. Also a skew measure: the IV gap between those two wings. 例: Stock $100: sell the $90 put for $2, buy the $110 call for $1.50. $0.50 credit, open upside, must buy at $90 if assigned.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "bullish",
+   "volatility"
+  ],
+  "zh": "风险逆转",
+  "related": [
+   "synthetic-long",
+   "skew",
+   "collar",
+   "cash-secured-put"
+  ]
+ },
+ {
+  "id": "jade-lizard",
+  "word": "Jade lizard",
+  "phonetic": "[Options / Strategy]",
+  "translation": "玉蜥蜴：卖认沽＋卖认购价差，上方无风险。EN: Short put plus a short call spread, with total credit bigger than the call spread width. No upside risk; downside like a short put. 例: Sell the $95 put for $2.00 and the $105/$107 call spread for $0.80: $2.80 credit > $2 width, so no loss above $105.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "income",
+   "neutral",
+   "bullish"
+  ],
+  "zh": "玉蜥蜴",
+  "related": [
+   "short-strangle",
+   "bear-call-spread",
+   "cash-secured-put",
+   "iron-condor"
+  ]
+ },
+ {
+  "id": "broken-wing",
+  "word": "Broken-wing butterfly",
+  "phonetic": "[Options / Strategy]",
+  "translation": "断翼蝶式：两翼不对称的蝶式，可零成本或收钱开仓。EN: A butterfly with one wing farther out than the other. Often opened for a credit: no risk on one side, more risk on the other. 例: Buy 1 $100 put, sell 2 $95 puts, buy 1 $85 put for $0.50 credit: no loss above $100, max loss $450 below $85.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "spread"
+  ],
+  "zh": "断翼蝶式",
+  "related": [
+   "butterfly",
+   "iron-butterfly",
+   "ratio-spread",
+   "vertical"
+  ]
+ },
+ {
+  "id": "naked-call",
+  "word": "Naked call",
+  "phonetic": "[Options / Strategy]",
+  "translation": "裸卖看涨：无股票覆盖卖出认购，理论风险无限。EN: Selling a call without owning the shares or a higher call. Small credit, but the loss is unlimited if the stock soars. 例: Sell a $50 call for $1; a buyout gaps the stock to $80: loss = ($30 − $1) × 100 = $2,900.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "risk",
+   "bearish"
+  ],
+  "zh": "裸卖看涨",
+  "related": [
+   "covered-call",
+   "bear-call-spread",
+   "margin",
+   "options-level",
+   "tail-risk"
+  ]
+ },
+ {
+  "id": "married-put",
+  "word": "Married put",
+  "phonetic": "[Options / Strategy]",
+  "translation": "配对认沽：买股同时买认沽，为新仓投保。EN: Buy shares and a put at the same time. Sets a floor under the position from day one; payoff shape matches a long call. 公式: Max loss = stock cost − K + put premium 例: Buy 100 shares at $50 and a $45 put for $1.50: max loss $650 until the put expires.",
+  "category": "strategy",
+  "category_zh": "策略",
+  "tags": [
+   "strategy",
+   "hedge"
+  ],
+  "zh": "配对认沽",
+  "related": [
+   "protective-put",
+   "collar",
+   "long-call",
+   "synthetic-long"
+  ]
+ },
+ {
+  "id": "stop-loss",
+  "word": "Stop loss",
+  "phonetic": "[Options / Management]",
+  "translation": "止损：价格到达预设水平即平仓限制亏损。EN: A pre-set exit that closes a losing trade. Option stops are often based on the option price; gaps can jump right past them. 例: Sold a spread for $1.00: close it if it costs $2.00 to buy back (a $100 loss per spread).",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management",
+   "risk"
+  ],
+  "zh": "止损",
+  "related": [
+   "profit-target",
+   "max-loss",
+   "position-sizing",
+   "gap",
+   "slippage"
+  ]
+ },
+ {
+  "id": "profit-target",
+  "word": "Profit target",
+  "phonetic": "[Options / Management]",
+  "translation": "止盈目标：预设盈利水平平仓，如赚到最大盈利 50%。EN: A pre-set level to take gains. Option sellers often close at 50% of max profit to cut the risk left in the trade. 例: Sold an iron condor for $2.00: buy it back at $1.00 to lock in 50%.",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management"
+  ],
+  "zh": "止盈目标",
+  "related": [
+   "stop-loss",
+   "theta",
+   "credit-spread",
+   "max-profit",
+   "adjustment"
+  ]
+ },
+ {
+  "id": "adjustment",
+  "word": "Adjustment",
+  "phonetic": "[Options / Management]",
+  "translation": "调整：头寸受压时修改结构，如移仓或加腿。EN: Changing an open trade as conditions change: rolling, adding a spread, or closing one side to rebalance risk. 例: Price nears the short put of an iron condor: roll the untested call spread down to collect more credit.",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management"
+  ],
+  "zh": "调整",
+  "related": [
+   "roll",
+   "delta-neutral",
+   "stop-loss",
+   "iron-condor"
+  ]
+ },
+ {
+  "id": "tail-risk",
+  "word": "Tail risk",
+  "phonetic": "[Options / Risk]",
+  "translation": "尾部风险：罕见极端行情造成的巨额亏损。EN: Risk of rare, extreme moves far bigger than normal models expect. Short-premium sellers are the most exposed. 例: The S&P 500 fell about 20% in one day in 1987, a move a normal model treats as nearly impossible.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk"
+  ],
+  "zh": "尾部风险",
+  "related": [
+   "standard-deviation",
+   "naked-call",
+   "short-strangle",
+   "skew",
+   "vix"
+  ]
+ },
+ {
+  "id": "kelly",
+  "word": "Kelly criterion",
+  "phonetic": "[Options / Management]",
+  "translation": "凯利公式：按胜率与赔率计算最优下注比例。EN: Bet size that maximizes long-run growth for a given edge. Full Kelly swings wildly, so traders use a fraction (¼ to ½). 公式: f* = edge / odds = p − (1 − p) / b 例: Win 60% at even odds (b = 1): f* = 0.6 − 0.4 = 20% of the account; half Kelly = 10%.",
+  "category": "management",
+  "category_zh": "仓位管理",
+  "tags": [
+   "management",
+   "risk"
+  ],
+  "zh": "凯利公式",
+  "related": [
+   "position-sizing",
+   "expected-value",
+   "risk-reward",
+   "probability-of-profit"
+  ]
+ },
+ {
+  "id": "risk-reward",
+  "word": "Risk/reward ratio",
+  "phonetic": "[Options / Risk]",
+  "translation": "风险收益比：最大亏损与最大盈利之比。EN: Compares what a trade can lose to what it can make. Judge it together with the win rate: a poor ratio can still pay if wins are frequent. 公式: R/R = max loss / max profit 例: Credit spread risking $350 to make $150: R/R ≈ 2.3 : 1, so it must win over 70% to break even.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk"
+  ],
+  "zh": "风险收益比",
+  "related": [
+   "max-loss",
+   "max-profit",
+   "expected-value",
+   "probability-of-profit"
+  ]
+ },
+ {
+  "id": "expected-value",
+  "word": "Expected value",
+  "phonetic": "[Options / Risk]",
+  "translation": "期望值：各结果概率加权的平均盈亏。EN: Average result per trade if repeated many times: probability-weighted wins minus losses. Aim for positive EV. 公式: EV = p × win − (1 − p) × loss 例: 75% to win $150, 25% to lose $350: EV = $112.50 − $87.50 = +$25 per trade.",
+  "category": "risk",
+  "category_zh": "风险",
+  "tags": [
+   "risk"
+  ],
+  "zh": "期望值",
+  "related": [
+   "probability-of-profit",
+   "risk-reward",
+   "kelly"
+  ]
+ },
+ {
+  "id": "correlation",
+  "word": "Correlation",
+  "phonetic": "[Options / Market]",
+  "translation": "相关性：两资产同涨同跌的程度（−1 到 1）。EN: How closely two assets move together, from −1 to +1. Highly correlated positions add up to one big bet. 例: Short puts on AAPL, MSFT and QQQ look diversified, but they tend to lose together in a sell-off.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market",
+   "risk"
+  ],
+  "zh": "相关性",
+  "related": [
+   "beta-weighting",
+   "position-sizing",
+   "tail-risk"
+  ]
+ },
+ {
+  "id": "support-resistance",
+  "word": "Support and resistance",
+  "phonetic": "[Options / Indicator]",
+  "translation": "支撑与阻力：价格常止跌或受阻的价位。EN: Price levels where buying (support) or selling (resistance) has tended to stop moves. Traders often place short strikes beyond them. 例: A stock bounced at $95 three times: a $90 short put sits below that support.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator"
+  ],
+  "zh": "支撑与阻力",
+  "related": [
+   "trend",
+   "moving-average",
+   "bollinger",
+   "gap"
+  ]
+ },
+ {
+  "id": "trend",
+  "word": "Trend",
+  "phonetic": "[Options / Indicator]",
+  "translation": "趋势：价格持续向一个方向运行。EN: The general direction of price: up (higher highs and lows), down, or sideways. Match bullish, bearish or neutral trades to it. 例: Price above a rising 50-day average with higher lows: an uptrend that suits bull put spreads.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator"
+  ],
+  "zh": "趋势",
+  "related": [
+   "moving-average",
+   "support-resistance",
+   "macd",
+   "rsi"
+  ]
+ },
+ {
+  "id": "macd",
+  "word": "MACD",
+  "phonetic": "[Options / Indicator]",
+  "translation": "MACD 指标：快慢均线差构成的动量与趋势指标。EN: Moving Average Convergence Divergence: 12-day EMA minus 26-day EMA, with a 9-day signal line. Crossovers hint at momentum shifts. 公式: MACD = EMA12 − EMA26; signal = EMA9 of MACD 例: MACD crosses above its signal line while below zero: an early bullish momentum signal.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator"
+  ],
+  "zh": "MACD 指标",
+  "related": [
+   "moving-average",
+   "trend",
+   "rsi"
+  ]
+ },
+ {
+  "id": "bollinger",
+  "word": "Bollinger Bands",
+  "phonetic": "[Options / Indicator]",
+  "translation": "布林带：均线 ±2 倍标准差的通道。EN: A 20-day moving average with bands 2 standard deviations above and below. Narrow bands = quiet market; band touches = stretched price. 公式: Bands = SMA20 ± 2 × σ20 例: 20-day average $100, 20-day σ $3: bands at $94 and $106.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator",
+   "volatility"
+  ],
+  "zh": "布林带",
+  "related": [
+   "moving-average",
+   "standard-deviation",
+   "hv",
+   "atr"
+  ]
+ },
+ {
+  "id": "atr",
+  "word": "Average true range (ATR)",
+  "phonetic": "[Options / Indicator]",
+  "translation": "平均真实波幅 ATR：衡量每日价格波动范围的指标。EN: Average daily range over N days (often 14), including gaps. Shows how far a stock really moves in a day. 公式: TR = max(H − L, |H − Cprev|, |L − Cprev|); ATR = average TR 例: ATR of $2.50 on a $100 stock: a stop $1 away sits inside normal daily noise.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator",
+   "volatility"
+  ],
+  "zh": "平均真实波幅 ATR",
+  "related": [
+   "hv",
+   "bollinger",
+   "standard-deviation",
+   "stop-loss",
+   "gap"
+  ]
+ },
+ {
+  "id": "put-call-ratio",
+  "word": "Put/call ratio",
+  "phonetic": "[Options / Indicator]",
+  "translation": "认沽认购比：认沽成交/持仓与认购之比，衡量情绪。EN: Put volume (or open interest) divided by call volume. High readings show fear or hedging; often read as a contrarian signal. 公式: PCR = put volume / call volume 例: 1.2M puts and 0.8M calls traded: PCR = 1.5, a fearful reading.",
+  "category": "indicator",
+  "category_zh": "技术指标",
+  "tags": [
+   "indicator",
+   "market"
+  ],
+  "zh": "认沽认购比",
+  "related": [
+   "volume",
+   "open-interest",
+   "vix",
+   "skew"
+  ]
+ },
+ {
+  "id": "max-pain",
+  "word": "Max pain",
+  "phonetic": "[Options / Market]",
+  "translation": "最大痛点：使期权持有者到期总价值最小的价格。EN: The strike where option holders in total would lose the most at expiry. Some say price drifts toward it; the evidence is weak and debated. 例: Open interest is heaviest around $100, so max pain is $100 — but treat it as a curiosity, not a target.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market"
+  ],
+  "zh": "最大痛点",
+  "related": [
+   "open-interest",
+   "pin-risk",
+   "expiration",
+   "gamma-squeeze"
+  ]
+ },
+ {
+  "id": "short-interest",
+  "word": "Short interest",
+  "phonetic": "[Options / Market]",
+  "translation": "空头持仓：已卖空未回补的股数，高则有逼空风险。EN: Shares sold short and not yet bought back, often shown as % of float. High levels add squeeze risk if price jumps. 公式: Days to cover = shares short / average daily volume 例: 20M shares short, 4M traded per day: 5 days to cover.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market"
+  ],
+  "zh": "空头持仓",
+  "related": [
+   "gamma-squeeze",
+   "put-call-ratio",
+   "gap"
+  ]
+ },
+ {
+  "id": "fomc",
+  "word": "FOMC rate decision",
+  "phonetic": "[Options / Events]",
+  "translation": "美联储议息会议：每年 8 次的利率决议，常推升 IV。EN: The Fed's rate-setting meeting, 8 times a year. The decision and press conference can move every market, so IV often rises into it. 例: Index IV often climbs before an FOMC day and drops once the statement is out.",
+  "category": "events",
+  "category_zh": "事件",
+  "tags": [
+   "events"
+  ],
+  "zh": "美联储议息会议",
+  "related": [
+   "risk-free-rate",
+   "cpi",
+   "iv-crush",
+   "rho",
+   "expected-move"
+  ]
+ },
+ {
+  "id": "cpi",
+  "word": "CPI report",
+  "phonetic": "[Options / Events]",
+  "translation": "CPI 通胀报告：每月美国通胀数据，影响利率预期与指数。EN: Monthly US inflation report. A hot or cool reading shifts rate expectations, so stocks and index options can swing hard that day. 例: CPI comes in above forecast at 8:30 a.m.: index futures drop and SPX opens with a gap down.",
+  "category": "events",
+  "category_zh": "事件",
+  "tags": [
+   "events"
+  ],
+  "zh": "CPI 通胀报告",
+  "related": [
+   "fomc",
+   "expected-move",
+   "gap",
+   "iv-crush"
+  ]
+ },
+ {
+  "id": "gap",
+  "word": "Price gap",
+  "phonetic": "[Options / Market]",
+  "translation": "价格跳空：开盘远离前收盘，止损无法在缺口内保护。EN: Price opens well above or below the prior close with no trades in between, often after news. Stops cannot protect inside the gap. 例: Closed at $100, earnings miss, opens at $88: a stop at $97 fills near $88.",
+  "category": "market",
+  "category_zh": "市场",
+  "tags": [
+   "market",
+   "events"
+  ],
+  "zh": "价格跳空",
+  "related": [
+   "earnings",
+   "stop-loss",
+   "tail-risk",
+   "slippage"
+  ]
+ }
+]
