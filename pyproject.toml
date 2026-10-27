@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "youdao-ydw012-eink-card"
+name = "ydw012-eink-card-tool"
 version = "1.0.0"
-description = "Standalone BLE Synchronization Tool, .CAD/.REV Wordbook Compiler, and Reverse-Engineering Docs for NetEase Youdao E-Ink Word Card (YDW012)"
+description = "Generic Dual-Mode BLE RCSP E-Ink Word Card Standalone Sync Tool, .CAD/.REV Container Compiler, and Embedded Protocol Study Reference"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9"
@@ -15,3 +15,4 @@ dependencies = [
 
 [project.scripts]
 ydw012 = "ydw012_cli:main"
+eink-card = "ydw012_cli:main"

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Unit & Round-Trip Verification Tests for YDW012 Protocol, Crypto, and .CAD/.REV Compiler.
+Unit & Round-Trip Verification Tests for Generic BLE E-Ink Word Card
+Protocol Framing, Link-Layer Auth Cipher, and .CAD/.REV Container Compiler.
 """
 
 import pathlib
@@ -25,8 +26,8 @@ from ydw012_cli import (
 )
 
 
-class TestYDW012CompilerAndProtocol(unittest.TestCase):
-    def test_jl_auth_deterministic(self):
+class TestEInkCardCompilerAndProtocol(unittest.TestCase):
+    def test_link_layer_auth_deterministic(self):
         challenge = bytes([0x00] + list(range(16)))
         resp1 = get_encrypted_auth_data(challenge)
         resp2 = get_encrypted_auth_data(challenge)
@@ -88,7 +89,7 @@ class TestYDW012CompilerAndProtocol(unittest.TestCase):
         self.assertEqual(parsed_rev["words_count"], 341)
         self.assertEqual(parsed_rev["headwords"], [e["headword"] for e in entries])
 
-    def test_youdao_msg_packers(self):
+    def test_ext_msg_packers(self):
         msg75 = pack_SetWordBookMsg(
             [{"book_id": 901, "words_count": 130}, {"book_id": 902, "words_count": 341}],
             curr_book_id=901,

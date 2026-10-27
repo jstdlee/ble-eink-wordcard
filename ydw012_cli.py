@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-NetEase Youdao E-Ink Word Card (YDW012 / 网易有道电子单词卡 YDW012)
+Generic Dual-Mode BLE RCSP E-Ink Word Card (YDW012 Series)
 Standalone BLE Synchronization Tool, FAT Browser & .CAD/.REV Wordbook Compiler.
 
-No mobile app, no cloud account, and no proprietary SDK required.
+Educational & Interoperability Notice:
+This tool is an independent, clean-room implementation of a generic BLE GATT/RCSP
+communication state machine and binary card container compiler for personal
+hardware interoperability and embedded protocol learning. It contains no third-party
+proprietary SDKs, firmware code, or copyrighted vocabulary assets.
 """
 
 import argparse
@@ -19,9 +23,10 @@ from typing import Dict, List, Optional, Tuple
 UUID_SERVICE = "0000ae00-0000-1000-8000-00805f9b34fb"
 UUID_WRITE = "0000ae01-0000-1000-8000-00805f9b34fb"
 UUID_NOTIFY = "0000ae02-0000-1000-8000-00805f9b34fb"
+DEFAULT_BLE_PREFIX = os.environ.get("EINK_BLE_PREFIX", "YDW:")
 
 # ============================================================================
-# 1. Jieli BLE Authentication Cipher (Reverse-engineered from libjl_auth.so)
+# Stage 1: Link-Layer 6-Step Challenge-Response Authentication Cipher
 # ============================================================================
 
 KS_TABLE = [
@@ -213,7 +218,7 @@ def get_encrypted_auth_data(data17: bytes) -> bytes:
 
 
 def crc16_xmodem(data: bytes, crc: int = 0) -> int:
-    """Standard CRC-16/XMODEM (poly=0x1021, init=0x0000) used by Jieli RCSP."""
+    """Standard CRC-16/XMODEM (poly=0x1021, init=0x0000) used by RCSP framing."""
     for b in data:
         crc ^= (b & 0xFF) << 8
         for _ in range(8):
@@ -449,7 +454,7 @@ def format_bilingual_entries(json_path: str) -> List[Dict[str, str]]:
 
 
 # ============================================================================
-# 3. Jieli RCSP & Youdao Custom 0xFF Protocol Framing
+# Stage 3: Standard RCSP & Custom 0xFF Extension Protocol Framing
 # ============================================================================
 
 
@@ -511,7 +516,7 @@ def pack_TransportBookMsg(book_id: int, book_type: int = 1, file_mask: int = 3) 
 
 
 def parse_file_browse_entries(data: bytes) -> List[Dict]:
-    """Parse Jieli FileBrowse (0x01 / xm_opcode=0x0C) directory listing payload."""
+    """Parse RCSP FileBrowse (0x01 / xm_opcode=0x0C) directory listing payload."""
     entries = []
     pos = 0
     while pos + 7 < len(data):
@@ -678,7 +683,7 @@ class YDW012Session:
                 ack = pack_rcsp_resp(0xFF, status=0, sn=rx["sn"], param=b"\x00")
                 await self.write_raw(ack)
 
-    async def send_youdao_msg(
+    async def send_ext_msg(
         self, yd_payload: bytes, expect_msg_type: Optional[int] = None, timeout: float = 5.0
     ) -> Tuple[Optional[Dict], Optional[Dict]]:
         sn = self.next_sn()
@@ -779,7 +784,7 @@ class YDW012Session:
         return bytes(buf)
 
     async def upload_file(self, filename: str, file_bytes: bytes, dev_handler: int = 1) -> bool:
-        """Upload a file (.cad or .rev) to YDW012 via Jieli LargeFileTransfer (0x21 -> 0x27 -> 0x1B -> 0x20 -> 0x1D -> 0x1C)."""
+        """Upload a file (.cad or .rev) to YDW012 via RCSP LargeFileTransfer (0x21 -> 0x27 -> 0x1B -> 0x20 -> 0x1D -> 0x1C)."""
         print(f"  [TransferTask] Preparing env for {filename} ({len(file_bytes)} bytes)...", flush=True)
         resp21 = await self.send_cmd_wait_resp(0x21, b"\x00", timeout=5.0)
         print(f"  [TransferTask] NotifyPrepareEnv (0x21) status={resp21['status']}", flush=True)
@@ -877,7 +882,7 @@ class YDW012Session:
                     await self.write_raw(ack)
                 if len(rx["payload"]) >= 2:
                     mtype = struct.unpack("<H", rx["payload"][:2])[0]
-                    print(f"  [TransferTask] Async Youdao 0xFF msgType=0x{mtype:04X}: {rx['payload'].hex()}", flush=True)
+                    print(f"  [TransferTask] Async Ext 0xFF msgType=0x{mtype:04X}: {rx['payload'].hex()}", flush=True)
 
 
 async def resolve_device(addr: Optional[str] = None, timeout: float = 10.0):
@@ -902,7 +907,7 @@ async def resolve_device(addr: Optional[str] = None, timeout: float = 10.0):
 async def query_device_books(sess: YDW012Session) -> List[Dict]:
     print("\n--- Querying YDW012 Device Status & Books ---", flush=True)
     existing_books = []
-    _, yd_task = await sess.send_youdao_msg(b"\x03\x00", expect_msg_type=0x0004, timeout=4.0)
+    _, yd_task = await sess.send_ext_msg(b"\x03\x00", expect_msg_type=0x0004, timeout=4.0)
     if yd_task:
         pl = yd_task["payload"]
         _, count = struct.unpack("<HH", pl[:4])
@@ -910,7 +915,7 @@ async def query_device_books(sess: YDW012Session) -> List[Dict]:
         print(f"GetTaskWordBookResultMsg (0x0004): count={count}, bookIds={books}", flush=True)
         for bid in books:
             req = struct.pack("<HQB", 0x0077, bid, 1)
-            _, yd_info = await sess.send_youdao_msg(req, expect_msg_type=0x0078, timeout=4.0)
+            _, yd_info = await sess.send_ext_msg(req, expect_msg_type=0x0078, timeout=4.0)
             if yd_info and len(yd_info["payload"]) >= 34:
                 ipl = yd_info["payload"]
                 (
@@ -948,7 +953,7 @@ async def query_device_books(sess: YDW012Session) -> List[Dict]:
                         "display_content": r_disp,
                     }
                 )
-    _, yd_curr = await sess.send_youdao_msg(b"\x19\x00", expect_msg_type=0x001A, timeout=4.0)
+    _, yd_curr = await sess.send_ext_msg(b"\x19\x00", expect_msg_type=0x001A, timeout=4.0)
     if yd_curr and len(yd_curr["payload"]) >= 33:
         cpl = yd_curr["payload"]
         _, c_bid, c_ver, c_tid, c_btype, c_wcnt, c_cidx = struct.unpack("<HQQIBHH", cpl[:27])
@@ -1072,20 +1077,20 @@ async def cmd_upload(
                     books_list.append(eb)
 
         print("\n--- Sending BeginSyncMsg (0x0055) ---", flush=True)
-        _, yd_beg = await sess.send_youdao_msg(b"\x55\x00", expect_msg_type=0x0056, timeout=5.0)
+        _, yd_beg = await sess.send_ext_msg(b"\x55\x00", expect_msg_type=0x0056, timeout=5.0)
         if yd_beg:
             print(f"BeginSyncResultMsg (0x0056): {yd_beg['payload'].hex()}", flush=True)
 
         print(f"\n--- Sending SetWordBookMsg (0x0075) for books {[b['book_id'] for b in books_list]} ---", flush=True)
         set_msg = pack_SetWordBookMsg(books_list, curr_book_id=compiled[0][0], curr_book_type=1)
-        _, yd_set_res = await sess.send_youdao_msg(set_msg, expect_msg_type=0x0076, timeout=6.0)
+        _, yd_set_res = await sess.send_ext_msg(set_msg, expect_msg_type=0x0076, timeout=6.0)
         if yd_set_res:
             print(f"SetWordBookResultMsg (0x0076): {yd_set_res['payload'].hex()}", flush=True)
 
         for bid, title, wcnt, cad_bytes, rev_bytes in compiled:
             print(f"\n--- Transporting Book {bid} ({title}, {wcnt} words) ---", flush=True)
             tb_msg = pack_TransportBookMsg(book_id=bid, book_type=1, file_mask=3)
-            _, yd_tb = await sess.send_youdao_msg(tb_msg, expect_msg_type=0x007B, timeout=6.0)
+            _, yd_tb = await sess.send_ext_msg(tb_msg, expect_msg_type=0x007B, timeout=6.0)
             if yd_tb:
                 print(f"TransportBookResultMsg (0x007B) for {bid}: {yd_tb['payload'].hex()}", flush=True)
             await sess.upload_file(f"{bid}.cad", cad_bytes)
@@ -1094,7 +1099,7 @@ async def cmd_upload(
             await asyncio.sleep(0.5)
 
         print("\n--- Sending EndSyncMsg (0x00AA, type=0) ---", flush=True)
-        _, yd_end = await sess.send_youdao_msg(b"\xAA\x00\x00\x00", expect_msg_type=0x00AB, timeout=6.0)
+        _, yd_end = await sess.send_ext_msg(b"\xAA\x00\x00\x00", expect_msg_type=0x00AB, timeout=6.0)
         if yd_end:
             print(f"EndSyncResultMsg (0x00AB): {yd_end['payload'].hex()}", flush=True)
 
@@ -1109,7 +1114,7 @@ def main():
     default_dir = str(repo_root / "examples" / "sim4director_words.json")
 
     parser = argparse.ArgumentParser(
-        description="NetEase Youdao YDW012 E-Ink Word Card Standalone BLE Tool & Compiler"
+        description="Generic Dual-Mode BLE RCSP E-Ink Word Card Standalone Sync Tool & Compiler (For Educational & Interoperability Study)"
     )
     parser.add_argument(
         "--addr",
